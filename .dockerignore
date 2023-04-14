@@ -1,4 +1,5 @@
 .gitignore
 Dockerfile
-Gemfile
-Gemfile.lock
+/log/*
+/tmp/*
+.git
