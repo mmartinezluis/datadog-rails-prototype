@@ -1,5 +1,5 @@
 FROM ruby:3.2.2-bullseye
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+# RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /app
 COPY Gemfile .
 COPY Gemfile.lock .
