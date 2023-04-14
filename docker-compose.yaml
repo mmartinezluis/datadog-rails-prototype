@@ -1,7 +1,7 @@
 version: 1
 services:
   rails-app:
-    image: '{DOCKER_USERNAME}/datadog-rails-prototype'
+    image: '{DOCKER_USERNAME}/datadog-rails-prototype:dev'
     ports:
       - '3000:3000'
     environment:
