@@ -3,3 +3,4 @@ Dockerfile
 /log/*
 /tmp/*
 .git
+.env

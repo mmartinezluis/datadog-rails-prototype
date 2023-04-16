@@ -1,21 +1,21 @@
-version: 1
+version: '1'
 services:
   rails-app:
-    image: '{DOCKER_USERNAME}/datadog-rails-prototype:dev'
+    image: '${DOCKER_USERNAME}/datadog-rails-prototype:dev'
     ports:
       - '3000:3000'
     environment:
-      - DD_AGEN_HOST=datadog
+      - DD_AGENT_HOST=datadog
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_ENV=rails-prototype
       - DD_SERVICE=fullstack-app
-      - DD_SITE=datadoghq.com
+      - DD_SITE=us5.datadoghq.com
       - DD_VERSION
       - DD_USERNAME
       - DD_PASSWORD
       - DD_CLIENT_TOKEN
-      - DD_APPLCIATION_ID
+      - DD_APPLICATION_ID
     labels:
       com.datadoghq.ad.logs: '[{"source": "ruby", "service":"fullstack-app"}]'
       com.datadoghq.tags.env: 'rails-prototype'
@@ -24,14 +24,15 @@ services:
   datadog:
     image: 'datadog/agent:7.41.1'
     environment:
-      - DD_API_KEY
+      - DD_API_KEY=${DATADOG_API_KEY}
       - DD_LOGS_ENABLED=true
       - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
       - DD_PROCESS_AGENT_ENABLED=true
       - DD_DOCKER_LABELS_AS_TAGS={"my.custom.lable.team":"fullstack"}
-      - DDD_TAGS='env:rails-prototype'
+      - DD_TAGS='env:rails-prototype'
       - DD_HOSTNAME=my-prototype-host
       - DD_APM_NON_LOCAL_TRAFFIC=true
+      - DD_SITE=us5.datadoghq.com
     ports:
       - 127.0.0.1:8126:8126/tcp
 
