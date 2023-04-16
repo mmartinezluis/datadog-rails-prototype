@@ -19,6 +19,7 @@ services:
     labels:
       com.datadoghq.ad.logs: '[{"source": "ruby", "service":"fullstack-app"}]'
       com.datadoghq.tags.env: 'rails-prototype'
+      com.datadoghq.tags.service: 'fullstack-app'
       com.datadoghq.version: '2.2.0'
       my.custom.label.team: 'fullstack'
   datadog:

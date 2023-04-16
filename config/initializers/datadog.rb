@@ -1,6 +1,7 @@
 Datadog.configure do |c|
   # This will activate auto-instrumentation for Rails
-  c.use :rails, {'analytics_enabled': true, 'service_name': 'store-frontend', 'cache_service': 'store-frontend-cache', 'database_service': 'store-frontend-sqlite'}
+#   c.use :rails, {'analytics_enabled': true, 'service_name': 'store-frontend', 'cache_service': 'store-frontend-cache', 'database_service': 'store-frontend-sqlite'}
+  c.use :rails, {'analytics_enabled': true, 'service_name': 'fullstack-app'}
   # Make sure requests are also instrumented
-  c.use :http, {'analytics_enabled': true, 'service_name': 'store-frontend'}
+  c.use :http, {'analytics_enabled': true, 'service_name': 'fullstack-app'}
 end
