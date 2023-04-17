@@ -84,10 +84,14 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.7.2)
-      irb (>= 1.5.0)
-      reline (>= 0.3.1)
+    ddtrace (1.10.1)
+      debase-ruby_core_source (>= 0.10.16, <= 3.2.0)
+      libdatadog (~> 2.0.0.1.0)
+      libddwaf (~> 1.6.2.0.0)
+      msgpack
+    debase-ruby_core_source (3.2.0)
     erubi (1.12.0)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -95,12 +99,12 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.6.0)
-    irb (1.6.4)
-      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    libdatadog (2.0.0.1.0)
+    libddwaf (1.6.2.0.0-x86_64-darwin)
+      ffi (~> 1.0)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -163,8 +167,6 @@ GEM
     rake (13.0.6)
     redis (4.8.1)
     regexp_parser (2.7.0)
-    reline (0.3.3)
-      io-console (~> 0.5)
     rexml (3.2.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.8.6)
@@ -212,7 +214,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
-  debug
+  ddtrace
   importmap-rails
   jbuilder
   puma (~> 5.0)
